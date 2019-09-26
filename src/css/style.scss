@@ -1,0 +1,97 @@
+//@import "modules/mixin";
+@import "modules/normalize";
+@import "modules/sizes";
+@import "modules/variebles";
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	font-family: Tahoma, sans-serif;
+	font-size: 14px;
+	color: $black;
+}
+
+body {
+	max-width: 100%;
+	width: 100%;
+	-webkit-font-smoothing: antialiased;
+	position: relative;
+}
+
+html, body {
+	-webkit-overflow-scrolling: touch !important;
+	height: 100% !important;
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	position: relative;
+	height: auto !important;
+	overflow: hidden;
+}
+
+.website {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.container {
+	display: block;
+	position: relative;
+	padding: 0 20px;
+	min-width: 320px;
+
+	@media (min-width: $t) {
+		max-width: 870px;
+		padding: 0 30px;
+		margin: 0 auto;
+	}
+}
+
+.section {
+	padding: 50px 0;
+
+	&__title {
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 34px;
+
+		&_film {
+			margin-bottom: 30px;
+			padding: 0 10px;
+		}
+	}
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	width: 190px;
+	height: 32px;
+	border-radius: 4px;
+	overflow: hidden;
+	font-size: 13px;
+	line-height: 18px;
+
+	&:hover, &:focus {
+		text-decoration: underline;
+	}
+
+	&_more {
+		margin: 0 auto;
+		background: $blue;
+		color: $white;
+	}
+}
+
+//components
+@import "components/films";
+@import "components/search";

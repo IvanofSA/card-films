@@ -1,0 +1,45 @@
+.films {
+	margin-bottom: 31px;
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&__item {
+		width: 100%;
+		max-width: 258px;
+		margin: 0 6px 22px;
+		overflow: hidden;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		border-radius: 4px 4px 0 0;
+	}
+
+	&__img {
+
+		img {
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+			object-fit: cover;
+		}
+	}
+
+	&__body {
+		padding: 12px 11px;
+	}
+
+	&__title {
+		display: block;
+		color: $blue;
+		font-size: 15px;
+		line-height: 20px;
+	}
+
+	&__name {
+		display: block;
+		font-size: 12px;
+		line-height: 16px;
+	}
+}
