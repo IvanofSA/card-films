@@ -3,7 +3,7 @@ import api from "./modules/api"
 import slugify from 'slugify'
 
 
-if(process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {
 	console.log('Working in development mode');
 }
 
@@ -22,7 +22,7 @@ let limit = 10,
 	pages = 0;
 
 function getAllFilms(params) {
-	if(!flag) {
+	if (!flag) {
 		loader.classList.remove('hide');
 		flag = true;
 		api.getAllFilms('films', params).then((data) => {
@@ -31,8 +31,8 @@ function getAllFilms(params) {
 			loader.classList.add('hide');
 		}).catch((err) => {
 			flag = false;
-			console.log(err);
 			loader.classList.add('hide');
+			console.log(err);
 		});
 	}
 }
@@ -60,7 +60,7 @@ function getImage(name) {
 		defaultImg = 'http://placehold.it/260x85?text=Placeholder';
 
 	return api.getImages(slug).then((data) => {
-		if(data.hits.length === 0) {
+		if (data.hits.length === 0) {
 			return defaultImg;
 		} else {
 			return data.hits[0].webformatURL
@@ -82,8 +82,9 @@ function addTemplate(img, title, director) {
 }
 
 function renderList(films) {
+	renderList
 	let arr = [];
-	for( let i in films ) {
+	for (let i in films) {
 		// получаем массив промисов с карточками + изображения
 		arr.push(
 			getImage(films[i].title).then((img) => addTemplate(img, films[i].title, films[i].director))
@@ -91,9 +92,12 @@ function renderList(films) {
 	}
 	//добавляем темплайт
 	Promise.all(arr).then((template) => {
-		console.log();
 		listWrap.insertAdjacentHTML('beforeEnd', template.join().replace(/,/g, ''));
 	});
+
+	//сбрасываем поиск
+	search.value = '';
+	doneTyping();
 }
 
 search.addEventListener('keyup', (e) => {
@@ -109,10 +113,10 @@ function doneTyping() {
 	let films = $$('.js-film'),
 		filter = search.value.trim().toLowerCase();
 
-	for( let film of films ) {
+	for (let film of films) {
 		let title = film.querySelector('.js-title');
 
-		if(title.innerHTML.toLowerCase().indexOf(filter) > -1) {
+		if (title.innerHTML.toLowerCase().indexOf(filter) > -1) {
 			film.classList.remove('hide');
 		} else {
 			film.classList.add('hide');

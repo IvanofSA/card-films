@@ -9,9 +9,7 @@ block content
     section.section
         .container
             .section__title.section__title_film Каталог фильмов
-            .search
-                i.search__icon
-                input.search__input.js-search(type="text" autocomplete="off" name='search' placeholder="Введите название")
+            include ./layout/block/search
             .films
                 ul.films__list.js-list-wrap
             button.js-btn.btn.btn_more Показать еще
