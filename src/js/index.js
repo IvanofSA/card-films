@@ -108,7 +108,6 @@ search.addEventListener('keyup', (e) => {
 function doneTyping() {
 	let films = $$('.js-film'),
 		filter = search.value.trim().toLowerCase();
-	loader.classList.remove('hide');
 
 	for( let film of films ) {
 		let title = film.querySelector('.js-title');
