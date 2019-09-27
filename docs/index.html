@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	<title>HTML Page</title><!--+loadCSS('/css/promo.css')--></head>
+<body>
+<div class="wrapper">
+	<div class="website">
+		<section class="section">
+			<div class="container">
+				<div class="section__title section__title_film">Каталог фильмов</div>
+				<div class="search"><i class="search__icon"></i><input class="search__input js-search" type="text"
+																	   autocomplete="off" name="search"
+																	   placeholder="Введите название"></div>
+				<div class="films">
+					<ul class="films__list js-list-wrap"></ul>
+				</div>
+				<button class="js-btn btn btn_more">Показать еще</button>
+			</div>
+		</section>
+	</div>
+	<div class="loader-wrapper js-loader hide">
+		<div class="loader">
+			<div class="dot d1"></div>
+			<div class="dot d2"></div>
+			<div class="dot d3"></div>
+			<div class="dot d4"></div>
+		</div>
+	</div>
+</div>
+<script src="js/main.bundle.js"></script>
+</body>
+</html>
